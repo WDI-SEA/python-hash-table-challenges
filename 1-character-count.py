@@ -28,16 +28,28 @@ the character r occurs 1 times
 the character d occurs 1 times
 '''
 
-def character_count(string: str) -> None:
-  hash_table = { }
-  for char in string:
-    if char not in hash_table:
-        hash_table[char] = 1
-    else: 
-          hash_table[char] = hash_table[char] + 1
+# def character_count(string: str) -> None:
+#   hash_table = { }
+#   for char in string:
+#     if char not in hash_table:
+#         hash_table[char] = 1
+#     else: 
+#           hash_table[char] = hash_table[char] + 1
     
-    for char in hash_table:
-      print(f'the character {char} occurs {hash_table[char]} times')
+#     for char in hash_table:
+#       print(f'the character {char} occurs {hash_table[char]} times')
 
-character_count('banana')
-#character_count('hello world')
+def character_count(string):
+  hash_table = {}
+  for char in string:
+    if char in hash_table:
+      hash_table[char] += 1
+    else:
+      hash_table[char] = 1
+
+  for char in hash_table:
+     print(f'the character {char} occurs {hash_table[char]} times')
+
+
+#character_count('banana')
+character_count('hello world')
