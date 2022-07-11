@@ -23,5 +23,26 @@ Input: [10]
 Output: 10
 '''    
 
+# def find_it(li):
+#    hash = {}
+#    for number in li:
+#     if number not in hash:
+#       hash[number] = 1 
+#     else: 
+#       hash[number] += 1
+  
+#     for number in hash:
+#       if hash[number] % 2 != 0: return number
+
 def find_it(li):
-  pass
+  hash_table = {}
+  for i in li:
+    hash_table[i] = hash_table.get(i, 0) + 1
+
+  for i in hash_table:
+    if hash_table[i] % 2 != 0:
+      return i
+
+print('it should return 5', find_it([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5])) #5
+print('it should return -1', find_it([1,1,2,-2,5,2,4,4,-1,-2,5])) #-1
+print('it should return 10', find_it([10])) # 10
